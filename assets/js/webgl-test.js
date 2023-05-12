@@ -36,10 +36,6 @@ function main() {
     },
   };
 
-  // Initialize a shader program; this is where all the lighting
-  // for the vertices and so forth is established.
-  const shaderProgram = initShaderProgram(gl, vsSource, fsSource);
-
   const canvas = document.querySelector("#glcanvas");
   // Initialize the GL context
   const gl = canvas.getContext("webgl");
@@ -60,6 +56,10 @@ function main() {
   // Here's where we call the routine that builds all the
   // objects we'll be drawing.
   const buffers = initBuffers(gl);
+
+  // Initialize a shader program; this is where all the lighting
+  // for the vertices and so forth is established.
+  const shaderProgram = initShaderProgram(gl, vsSource, fsSource);
 
   // Draw the scene
   drawScene(gl, programInfo, buffers);
